@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module} from '@nestjs/common';
 import { CoursesService } from './../courses/courses.service';
 import {CoursesController } from './courses.controller';
 
@@ -6,4 +6,4 @@ import {CoursesController } from './courses.controller';
   controllers: [CoursesController],
   providers: [CoursesService]
 })
-export class CoursesModule {}
+export class CoursesModule{}

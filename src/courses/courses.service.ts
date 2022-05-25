@@ -1,3 +1,4 @@
+import { courseInterface } from './interface/courses.interface';
 import { HttpException, Injectable } from '@nestjs/common';
 import { COURSES } from './courses.mock';
 @Injectable()
@@ -10,7 +11,6 @@ export class CoursesService {
     }
     getCoure(id): Promise<any>{
         return new Promise((resolve,reject)=>{
-            id=Number(id);
             const coure = this.courses.find(el=>el.id === id);
             if(!coure){
                 throw new HttpException('Course does not exist',404);
@@ -18,9 +18,8 @@ export class CoursesService {
             resolve(coure);
         })
     }
-    addCourse(course): Promise<any>{
+    addCourse(course:courseInterface): Promise<any>{
         return new Promise((resolve,reject)=>{
-            console.log('course_add: ',course);
             this.courses.push(course);
             resolve(this.courses);
         })
