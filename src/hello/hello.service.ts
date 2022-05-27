@@ -4,7 +4,6 @@ import { Injectable } from '@nestjs/common';
 import { CreateHelloDto } from './dto/create-hello.dto';
 import { UpdateHelloDto } from './dto/update-hello.dto';
 import { Model } from 'mongoose';
-console.log(Hello.name)
 @Injectable()
 export class HelloService {
 

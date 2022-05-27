@@ -3,7 +3,8 @@ import { CoursesService } from './courses.service';
 import { CoursesDto } from './dto/courses.dto';
 import { Request, Response } from 'express';
 import { validate } from 'class-validator';
-@Controller('courses')
+// @Controller('courses')
+@Controller('fakeroutes')
 export class CoursesController {
     constructor(private courseService: CoursesService){}
 
