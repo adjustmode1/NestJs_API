@@ -11,4 +11,8 @@ export class AuthService {
     findAll(){
         return this.authModel.find();
     }
+
+    validate(email:string,password:string){
+        return this.authModel.findOne({email,password}).exec();
+    }
 }
