@@ -21,9 +21,17 @@ export class UploadController {
     }
 
     @Post('uploads')
-    @UseInterceptors(FilesInterceptor('files'))
+    @UseInterceptors(FilesInterceptor('files',10,{
+        storage:diskStorage({
+            destination:'./save-upload',
+            filename:(req,file,cb)=>{
+                cb(null,Date.now()+file.originalname);
+            }
+        })
+    }))
     uploadsFile(@UploadedFiles() files: Array<Express.Multer.File>){
         console.log(files)
+        return "files ok";
     }
 
     @Get()
